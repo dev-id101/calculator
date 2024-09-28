@@ -1,6 +1,7 @@
 import 'package:calculator/widgets/calc_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:math_expressions/math_expressions.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -33,9 +34,14 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void evaluate(String text) {
+    Parser p = Parser();
+    Expression exp = p.parse(_expression);
+    ContextModel cm = ContextModel();
+    double eval = exp.evaluate(EvaluationType.REAL, cm);
+
     setState(() {
       _history = _expression;
-      _expression = 'solved';
+      _expression = eval.toString();
     });
   }
 
