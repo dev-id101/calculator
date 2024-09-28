@@ -7,6 +7,21 @@ class CalcButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text ?? '');
+    return SizedBox(
+      height: 65,
+      width: 65,
+      child: TextButton(
+        onPressed: () {},
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50),
+            ),
+          ),
+          backgroundColor: MaterialStateProperty.all(Colors.blue),
+        ),
+        child: Text(text ?? ''),
+      ),
+    );
   }
 }
