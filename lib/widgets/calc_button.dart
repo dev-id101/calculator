@@ -7,7 +7,7 @@ class CalcButton extends StatelessWidget {
     this.text,
     this.fillColor,
     this.textColor = 0xFFFFFFFF,
-    this.textSize = 24,
+    this.textSize = 28,
   });
 
   final String? text;

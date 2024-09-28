@@ -1,5 +1,6 @@
 import 'package:calculator/widgets/calc_button.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,12 +12,36 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xFF283637),
+    return Scaffold(
+      backgroundColor: const Color(0xFF283637),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Row(
+          Container(
+            padding: const EdgeInsets.only(right: 12),
+            alignment: const Alignment(1, 1),
+            child: Text(
+              '123*123',
+              style: GoogleFonts.rubik(
+                textStyle: const TextStyle(fontSize: 24),
+                color: const Color(0xFF545F61),
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(12),
+            alignment: const Alignment(1, 1),
+            child: Text(
+              '123',
+              style: GoogleFonts.rubik(
+                  textStyle: const TextStyle(fontSize: 48),
+                  color: Colors.white),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CalcButton(
@@ -39,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CalcButton(
@@ -58,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CalcButton(
@@ -74,10 +99,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 text: '-',
                 fillColor: 0xFFFFFFFF,
                 textColor: 0xFF65BDAC,
+                textSize: 38,
               ),
             ],
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CalcButton(
@@ -96,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CalcButton(
