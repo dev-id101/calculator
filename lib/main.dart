@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Color(0xFF283637),
         body: Center(
-          child: CalcButton(text: '1'),
+          child: CalcButton(
+            text: '1',
+          ),
         ),
       ),
     );
