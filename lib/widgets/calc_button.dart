@@ -8,12 +8,14 @@ class CalcButton extends StatelessWidget {
     this.fillColor,
     this.textColor = 0xFFFFFFFF,
     this.textSize = 28,
+    this.callback,
   });
 
   final String? text;
   final int? fillColor;
   final int textColor;
   final double textSize;
+  final Function? callback;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,9 @@ class CalcButton extends StatelessWidget {
         height: 65,
         width: 65,
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            callback! (text);
+          },
           style: ButtonStyle(
             shape: MaterialStateProperty.all(
               RoundedRectangleBorder(
