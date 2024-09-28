@@ -17,29 +17,32 @@ class CalcButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 65,
-      width: 65,
-      child: TextButton(
-        onPressed: () {},
-        style: ButtonStyle(
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50),
+    return Container(
+      margin: const EdgeInsets.all(10),
+      child: SizedBox(
+        height: 65,
+        width: 65,
+        child: TextButton(
+          onPressed: () {},
+          style: ButtonStyle(
+            shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
+            ),
+            backgroundColor: MaterialStateProperty.all(
+              fillColor != null ? Color(fillColor!) : null,
+            ),
+            foregroundColor: MaterialStateProperty.all(
+              Color(textColor),
             ),
           ),
-          backgroundColor: MaterialStateProperty.all(
-            fillColor != null ? Color(fillColor!) : null,
-          ),
-          foregroundColor: MaterialStateProperty.all(
-            Color(textColor),
-          ),
-        ),
-        child: Text(
-          text ?? '',
-          style: GoogleFonts.rubik(
-            textStyle: TextStyle(
-              fontSize: textSize,
+          child: Text(
+            text ?? '',
+            style: GoogleFonts.rubik(
+              textStyle: TextStyle(
+                fontSize: textSize,
+              ),
             ),
           ),
         ),
